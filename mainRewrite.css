@@ -1,48 +1,6 @@
-/* ========================================================================
-   MSN Messenger Discord Theme - mainRewrite.css
-   Light clone based on Fallout4Terminal’s maintained mappings
-   ======================================================================== */
+/* MSN overrides only, no Fallout imports */
 
-/* 1. Import Fallout’s maintained rewrite FIRST */
-@import url('https://B4T3S.github.io/Fallout4TerminalTheme/mainRewrite.css');
-
-/* 2. THEN apply MSN overrides so they take priority */
-:root,
-.theme-dark,
-.theme-light {
-  --rgb-highlight: 49, 107, 198; /* MSN blue */
-  --rgb-background: 236, 240, 245; /* Light gray background */
-  --rgb-text: 34, 34, 34;
-  --rgb-close-button: 212, 18, 39;
-  --rgb-online-color: 57, 255, 20;
-  --rgb-afk-color: 255, 255, 51;
-  --rgb-dnd-color: 255, 0, 0;
-  --rgb-streaming-color: 188, 19, 254;
-
-  --transition-time: .3s;
-
-  --background-image: unset;
-  --background-position: center;
-  --background-size: cover;
-  --background-blur: 5px;
-  --background-brightness: 100%;
-
-  --show-original-title: 0;
-  --show-custom-title: 1;
-  --custom-title-text: "MSN Messenger";
-  --custom-title-font-size: 14px;
-  --custom-title-font-weight: bold;
-  --custom-title-margin-top: 0px;
-  --custom-title-margin-left: 0px;
-}
-
-/* Typography */
-body, button, input, textarea {
-  font-family: "Tahoma", sans-serif !important;
-  font-size: 13px !important;
-}
-
-/* Titlebar logo injection */
+/* Titlebar logo */
 .wordmarkWindows_ffbc5e,
 .wordmarkWindows__05c46 {
   background: url("https://lonepilot.github.io/msn-discord-theme/assets/msn-logo.png") no-repeat left center;
@@ -56,7 +14,7 @@ body, button, input, textarea {
   height: 14px;
 }
 ::-webkit-scrollbar-thumb {
-  background-color: rgb(var(--rgb-highlight));
+  background-color: rgb(49, 107, 198); /* MSN blue */
   border: 2px solid #fff;
   border-radius: 2px;
 }
@@ -66,7 +24,7 @@ body, button, input, textarea {
 
 /* Selection */
 ::selection {
-  background: rgb(var(--rgb-highlight));
+  background: rgb(49, 107, 198);
   color: #fff;
 }
 
