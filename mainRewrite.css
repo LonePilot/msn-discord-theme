@@ -1,84 +1,94 @@
 /* ========================================================================
-   MSN Messenger Discord Theme - mainRewrite.css
-   Based on Fallout4Terminal’s working rewrite structure.
-   ======================================================================== */
+MSN Messenger Discord Theme - mainRewrite.css
+Light clone based on Fallout4Terminal’s structure (keeps all class mappings).
+======================================================================== */
+
 
 :root,
 .theme-dark,
 .theme-light {
-  --msn-blue: 49, 107, 198;
-  --msn-light: 236, 240, 245;
-  --msn-dark: 32, 32, 37;
-  --msn-text: 34, 34, 34;
+/* MSN palette */
+--rgb-highlight: 49, 107, 198; /* MSN blue */
+--rgb-background: 236, 240, 245; /* Light gray background */
+--rgb-text: 34, 34, 34; /* Default dark text */
+--rgb-close-button: 212, 18, 39; /* Close/deny red */
+--rgb-online-color: 57, 255, 20; /* Online status */
+--rgb-afk-color: 255, 255, 51; /* Idle status */
+--rgb-dnd-color: 255, 0, 0; /* Do not disturb */
+--rgb-streaming-color: 188, 19, 254; /* Streaming */
 
-  /* Override Discord core tokens */
-  --brand-experiment: rgb(var(--msn-blue));
-  --text-normal: rgb(var(--msn-text));
-  --background-primary: rgb(var(--msn-light));
-  --background-secondary: #f8f9fc;
-  --background-tertiary: #ffffff;
-  --background-floating: #ffffff;
 
-  --scrollbar-thin-thumb: rgb(var(--msn-blue));
-  --scrollbar-auto-thumb: rgb(var(--msn-blue));
-  --scrollbar-auto-track: rgb(217, 222, 242);
+--transition-time: .3s;
+
+
+--background-image: unset;
+--background-position: center;
+--background-size: cover;
+--background-blur: 5px;
+--background-brightness: 100%;
+
+
+--show-original-title: 0;
+--show-custom-title: 1;
+--custom-title-text: "MSN Messenger";
+--custom-title-font-size: 14px;
+--custom-title-font-weight: bold;
+--custom-title-margin-top: 0px;
+--custom-title-margin-left: 0px;
 }
+
 
 /* Typography */
 body, button, input, textarea {
-  font-family: "Tahoma", sans-serif !important;
-  font-size: 13px !important;
+font-family: "Tahoma", sans-serif !important;
+font-size: 13px !important;
+font-weight: normal;
+letter-spacing: 0;
 }
 
-/* Titlebar with MSN logo */
-.typeWindows_e41dab,
-[role="banner"] {
-  background: linear-gradient(to bottom, #fff, #e3e8f5);
-  border-bottom: 1px solid #a5bde5;
-}
 
+/* Titlebar logo injection */
 .wordmarkWindows_ffbc5e,
 .wordmarkWindows__05c46 {
-  background: url("https://lonepilot.github.io/msn-discord-theme/assets/msn-logo.png") no-repeat left center;
-  background-size: contain;
-  color: transparent !important;
+background: url("https://lonepilot.github.io/msn-discord-theme/assets/msn-logo.png") no-repeat left center;
+background-size: contain;
+color: transparent !important;
 }
+
 
 /* Scrollbars */
 ::-webkit-scrollbar {
-  width: 14px;
-  height: 14px;
+width: 14px;
+height: 14px;
 }
 ::-webkit-scrollbar-thumb {
-  background-color: rgb(var(--msn-blue));
-  border: 2px solid #fff;
-  border-radius: 2px;
+background-color: rgb(var(--rgb-highlight));
+border: 2px solid #fff;
+border-radius: 2px;
 }
 ::-webkit-scrollbar-track {
-  background: rgb(217, 222, 242);
+background: #d9def2;
 }
+
 
 /* Selection */
 ::selection {
-  background: rgb(var(--msn-blue));
-  color: #fff;
+background: rgb(var(--rgb-highlight));
+color: #fff;
 }
 
-/* Buttons */
-button,
-[role="button"] {
-  border-radius: 0 !important;
-  font-family: "Tahoma", sans-serif;
-  font-weight: bold;
-}
 
 /* Tooltips */
 .tooltip,
 [role="tooltip"] {
-  background: #ffffe1;
-  border: 1px solid #000;
-  color: #000;
-  border-radius: 0;
-  font-family: "Tahoma", sans-serif;
-  font-size: 12px;
+background: #ffffe1;
+border: 1px solid #000;
+color: #000;
+border-radius: 0;
+font-family: "Tahoma", sans-serif;
+font-size: 12px;
 }
+
+
+/* Keep all Fallout class mappings intact */
+@import url('https://B4T3S.github.io/Fallout4TerminalTheme/mainRewrite.css');
