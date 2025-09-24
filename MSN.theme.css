@@ -5,8 +5,8 @@
  * @description Brings the early 2000s MSN Messenger look to Discord.
  */
 
-@import url("https://B4T3S.github.io/Fallout4TerminalTheme/mainRewrite.css"); /* Fallout mappings */
-@import url("https://lonepilot.github.io/msn-discord-theme/mainRewrite.css"); /* MSN overrides */
+@import url("vencord:///themes/FalloutRewrite.css");
+@import url("vencord:///themes/MSNoverrides.css");
 
 /* Variables (optional overrides) */
 :root {
