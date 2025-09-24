@@ -1,99 +1,87 @@
 /* ========================================================================
-MSN Messenger Discord Theme - Main Rewrite
-This file contains all compatibility fixes and MSN styling rules.
-DO NOT install this file directly into Discord.
-Instead, use MSN.theme.css as the entry point.
+MSN Messenger Discord Theme - Future-Proof Base
+Light version: focuses on fonts, colors, scrollbars, and logo injection.
 ======================================================================== */
 
 
 :root {
-/* Shared variables (some overridden in MSN.theme.css) */
---selected-color: #316bc6;
---status-speaking: lime;
---background-secondary: #000;
+--msn-blue: #316bc6;
+--msn-light: #ecf0f5;
+--msn-dark: #202025;
+--msn-text: #222;
+--msn-logo: url("https://lonepilot.github.io/msn-discord-theme/assets/msn-logo.png");
+
+
+/* Override Discord base tokens */
+--background-primary: var(--msn-light);
+--background-secondary: #f8f9fc;
+--background-tertiary: #fff;
+--background-floating: #ffffff;
+
+
+--text-normal: var(--msn-text);
+--text-muted: #555;
+--text-link: var(--msn-blue);
+
+
+--scrollbar-thin-thumb: var(--msn-blue);
+--scrollbar-auto-thumb: var(--msn-blue);
+--scrollbar-auto-track: #d9def2;
+
+
+--brand-experiment: var(--msn-blue);
 }
 
 
-/* =================== MODERN DISCORD COMPATIBILITY FIXES =================== */
+.theme-dark {
+--background-primary: var(--msn-dark);
+--background-secondary: #2c2c2c;
+--background-tertiary: #1b1b1b;
+--background-floating: #2a2a2a;
 
 
-/* Remove border radius from modern Discord elements */
-.folderIconWrapper__11165,
-.footer__90194,
-.footer_e0b400,
-.friend__05c43,
-.friendRequestsButton__77e10,
-.gameIcon_fc710a,
-.gameNameInput__3e1e4,
-.avatar__08316,
-.wrapperSimple__9e2b0,
-.iconInactive__8c603,
-.wrapper_de1c7e,
-.avatar_f8541f,
-.avatarWrapperNonUserBot_b35fdc,
-.userPopoutAvatar_dd1d5b,
-.avatarUploaderInner_e9e5f9,
-.avatarUploader_f6e4a3 {
-border-radius: 0;
+--text-normal: #eee;
+--text-muted: #aaa;
+--text-link: #4d90fe;
 }
 
 
-/* Basic typography and font fixes */
-html,
-body,
-button,
-textarea,
-input,
-select,
-span,
-div {
-font-size: var(--font-size) !important;
-font-family: var(--font-primary) !important;
-font-weight: normal !important;
-letter-spacing: 0;
-word-spacing: normal;
+/* Typography */
+body, button, input, textarea {
+font-family: "Tahoma", sans-serif !important;
+font-size: 13px !important;
 }
 
 
-/* Modern Discord background compatibility */
-.theme-light .bg_bc64b9,
-.theme-light .container__11d72,
-.theme-light .wrapper_c25c8d,
-.theme-light .base_bb89e3 {
-background: transparent !important;
+/* Titlebar with MSN logo */
+.typeWindows_e41dab,
+[role="banner"] {
+background: linear-gradient(to bottom, #fff, #e3e8f5);
+border-bottom: 1px solid #a5bde5;
 }
 
 
-/* Channels and DMs */
-.channel_c91bad,
-.interactive_c5ac0b {
-padding: 0 3px;
-border-radius: 0;
+.wordmarkWindows_ffbc5e,
+.wordmarkWindows__05c46 {
+background: var(--msn-logo) no-repeat left center;
+background-size: contain;
+color: transparent !important;
 }
 
 
-.channel_c91bad:hover {
-background: var(--dm-hover);
-box-shadow: var(--dm-hover-border);
+/* Scrollbars */
+::-webkit-scrollbar {
+width: 14px;
+height: 14px;
 }
 
 
-.channel_c91bad:active {
-background: var(--dm-active);
+::-webkit-scrollbar-thumb {
+background-color: var(--msn-blue);
+border: 2px solid #fff;
+border-radius: 2px;
 }
 
 
-.channel_c91bad.selected_f5ec8e {
-background: var(--dm-selected);
-box-shadow: var(--dm-selected-border);
+::-webkit-scrollbar-track {
 }
-
-
-.channel_c91bad.selected_f5ec8e:hover {
-background: var(--dm-selected-hover);
-}
-
-
-/* Windows titlebar */
-.typeWindows_e41dab {
-padding: 3px;
