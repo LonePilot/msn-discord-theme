@@ -1,0 +1,15 @@
+/**
+ * @name MSN Messenger Theme
+ * @author LonePilot
+ * @version 1.0.0
+ * @description Brings the early 2000s MSN Messenger look to Discord.
+ */
+
+@import url('https://lonepilot.github.io/msn-discord-theme/mainRewrite.css');
+
+/* Customization variables */
+:root {
+  --font-primary: "Tahoma";
+  --font-size: 13px;
+  --msn-logo: url(https://yourusername.github.io/msn-discord-theme/assets/msn-logo.png);
+}
